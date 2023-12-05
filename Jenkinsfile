@@ -14,6 +14,9 @@ node {
     sh 'docker build -t jenkins-react-app:latest .'
     sh 'docker kill node'
   }
+    stage('Docker-Image') {
+    sh 'docker run -d -p 80:80 jenkins-react-app '
+  }
   stage('Cleanup') {
     // Use the Git plugin to checkout the code
     git branch: 'master', url: 'https://github.com/Aquilero/jenkins-react-app.git'
