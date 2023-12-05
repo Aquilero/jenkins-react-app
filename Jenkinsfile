@@ -11,7 +11,7 @@ node {
     sh 'docker exec node npm ci'
     sh 'echo "YOUR COMMANDS HERE!"'
     sh 'docker exec node npm run build'
-    sh 'docker built -t jenkins-react-app:latest --build-arg WORKDIR=${WORKSPACE}/ .'
+    sh 'docker build -t jenkins-react-app:latest --build-arg WORKDIR=${WORKSPACE}/ .'
     sh 'docker kill node'
   }
   stage('Cleanup') {
