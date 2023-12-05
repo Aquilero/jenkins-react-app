@@ -2,4 +2,4 @@ FROM nginx:latest
 
 WORKDIR /usr/share/nginx/html/
 
-COPY ${WORKDIR}/build/* .
+COPY ${WORKDIR}/build/ .
