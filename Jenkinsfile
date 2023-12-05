@@ -15,6 +15,7 @@ node {
   }
   stage('Cleanup') {
     // Use the Git plugin to checkout the code
+    git branch: 'master', url: 'https://github.com/Aquilero/jenkins-react-app.git'
     deleteDir()
   }
 }
